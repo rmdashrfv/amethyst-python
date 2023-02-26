@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <img align="center" src="./assets/amethyst2.png" width="200px" style="margin: 20px auto; display: block;" />
+  <img align="center" src="https://i.imgur.com/YHnhLjr.png" width="200px" style="margin: 20px auto; display: block;" />
 </h1>
 
 <p align="center"><b>A Python extension for real-time feedback with <a href="https://docs.python.org/3.9/library/typing.html#module-typing" target="_blank">Python Type Hints</a></b>
