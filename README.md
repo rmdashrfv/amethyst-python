@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <img align="center" src="https://i.imgur.com/YHnhLjr.png" width="200px" style="margin: 20px auto; display: block;" />
+  <img align="center" src="https://raw.githubusercontent.com/rmdashrfv/amethyst-python/main/assets/amethyst2.png" width="200px" style="margin: 20px auto; display: block;" />
 </h1>
 
 <p align="center"><b>A Python extension for real-time feedback with <a href="https://docs.python.org/3.9/library/typing.html#module-typing" target="_blank">Python Type Hints</a></b>
@@ -39,20 +39,28 @@ Amethyst for Python requires Python 3.5+, preferrably 3.10.x. For those who want
 
 ## ⚙️ Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Here are the Settings for Amethyst. Feel free to change them to your liking/needs.
 
-For example:
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+| Setting        | Description   | Default  |
+|:------------- |:-------------|:-----|
+| Amethyst enabled | Amethyst runs and gives you live feedback when this is `true` | `true` (CMD+SHIFT+R to toggle) |
+| Python command| The command that your computer uses to run Python 3.7 or greater |   `python3` |
+| Evaluate with MyPy | Adhere to typing and type hints when this is `true` | `false` |
+| Debounce time | The minimum amount of time between calls to Amethyst to process your code | `125` (in milliseconds) |
+| Inline text color Correct | The color of the text for correct code | `#966ce0` |
+| Inline text color Incorrect | The color of the text for errors | `#fd3333` |
+| Inline text color Background Correct | The bg color of the text for errors | `transparent` |
+| Inline text color Background Incorrect | The bg color of the text for errors | `transparent` |
 
 ## Credits
-Amethyst is essentially a continuation of the Wolf extension for Python, inspired by the QuokkaJS extension for JavaScript/TypeScript. The plan is to be reasonably active with development for Amethyst and push out a few more features and eventually shift away from the idea of the "live scratchpad" to a go-to fully-featured development and debugging tool.
+Amethyst is essentially a continuation of the Wolf extension for Python, inspired by the QuokkaJS extension for JavaScript/TypeScript, LightTable, LiveCode, AREPL, and more. The plan is to be reasonably active with development for Amethyst and push out a few more features and eventually shift away from the idea of the "live scratchpad" to a go-to fully-featured development and debugging tool.
 
 
 ## 💭 FAQ
+
+### I'm having trouble getting Amethyst to start
+This is most likely do to your Python binary setup. Make sure you have Python 3.7 or greater installed, and make sure that the verison Python you want to use is mapped to your `python3` command. Otherwise you can open your terminal, run `which python` and then take the result of that command and paste it into the setting for the Python Command setting.
 
 ### Why is it called Amethyst?
 This extension is for the Python programming language so to stay on theme it was named after a kind of Pythonidae called the Amethystine Python which gets its name from the iridescent scales that appear to have a purple hue in certain lighting conditions!
@@ -63,12 +71,15 @@ I recommend getting into static typing once you have established at least some f
 ### Can I use this with Django and Flask?
 Amethyst was neither tested nor designed for use with scripts that are meant to run and wait indefinitely for requests, so I don't recommend it. It's more suited for learning and trying out new techniques to improve your understanding of Python which makes Django and Flask easier 😉
 
-### Known issues
+### API calls & external requests?
+I wanted to release this with HTTP request caching built-in at launch, but unfortunately ran out of time. Caching for external requests and API calls is a high priority for this project, so if you have any ideas or you want to help, please feel free to [join the discussion](https://github.com/rmdashrfv/amethyst-python/issues/1).
 
-##### Errors messages can stack on a single line
+## Known issues
+
+### Errors messages can stack on a single line
 When dealing with multiple simultaneous errors, it is possible for them to stack up on a single line. The goal is to get any given errant line of code to show only the topmost error and to reveal errors underneath only when that one is resolved. This issue seems to be tolerable so long as you can eventually solve your issue.
 
-##### Pressing return at the end a line clips Amethyst annotation
+### Pressing return at the end a line clips Amethyst annotation
 When you are at the end of a line of code that has output next to it and you press [RETURN], the annotation will briefly get clipped. This is only visible for a second, but I understand that this can be distracting and other extensions do this better. Working to resolve this ASAP.
 
 ## 📄 Release Notes
