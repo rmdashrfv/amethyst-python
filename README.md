@@ -12,7 +12,7 @@
 
 </div>
 
-<h3 align="center" style="margin-bottom: 80px">
+<h3 align="center" style="margin-bottom: 40px">
   <img align="center" src="https://raw.githubusercontent.com/rmdashrfv/amethyst-python/main/assets/demo.gif" width="100%" height="auto" style="margin: 20px auto; display: block;" />
 </h3>
 
@@ -77,8 +77,8 @@ I wanted to release this with HTTP request caching built-in at launch, but unfor
 
 ## Known issues
 
-### Life feedback for static typing is very slow
-Working on this and should have a fix soon. Because MyPy involves that extra step at every keystroke and due to the nature of type checking I am considering altering Amethyst so that static type checking only runs on save, while the general Python feedback still happens in real time as you type.
+### Live feedback for static typing is very slow
+Working on this and should have a fix soon. Because MyPy involves a heavy extra step on every keystroke and due to the nature of type checking I am considering altering Amethyst so that these extra checks run only on save or with a higher amount of debounce. The vanilla Python feedback would still occur responsively on every keypress. If you have thoughts or suggestions, please [open or chime in on an issue](https://github.com/rmdashrfv/amethyst-python/issues).
 
 ### Errors messages can stack on a single line
 When dealing with multiple simultaneous errors, it is possible for them to stack up on a single line. The goal is to get any given errant line of code to show only the topmost error and to reveal errors underneath only when that one is resolved. This issue seems to be tolerable so long as you can eventually solve your issue.
@@ -88,6 +88,8 @@ When you are at the end of a line of code that has output next to it and you pre
 
 ## 📄 Release Notes
 
-### 1.0.0
+### 1.1.0
+Fixed loading issue on Windows machines
 
+### 1.0.0
 Initial release of Amethyst
