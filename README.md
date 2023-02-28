@@ -1,6 +1,5 @@
-
 <h1 align="center">
-  <img align="center" src="https://raw.githubusercontent.com/rmdashrfv/amethyst-python/main/assets/amethyst2.png" width="200px" style="margin: 20px auto; display: block;" />
+  <img align="center" src="https://raw.githubusercontent.com/rmdashrfv/amethyst-python/main/assets/amethyst2.png" width="200px" style="margin: 20px auto; display: block;"/>
 </h1>
 
 <p align="center"><b>A Python extension for real-time feedback with <a href="https://docs.python.org/3.9/library/typing.html#module-typing" target="_blank">Python Type Hints</a></b>
@@ -13,7 +12,9 @@
 
 </div>
 
-\!\[feature X\]\(images/feature-x.png\)
+<h3 align="center" style="margin-bottom: 80px">
+  <img align="center" src="https://raw.githubusercontent.com/rmdashrfv/amethyst-python/main/assets/demo.gif" width="100%" height="auto" style="margin: 20px auto; display: block;" />
+</h3>
 
 ## Amethyst for Visual Studio Code
 
@@ -59,11 +60,11 @@ Amethyst is essentially a continuation of the Wolf extension for Python, inspire
 
 ## 💭 FAQ
 
-### I'm having trouble getting Amethyst to start
-This is most likely do to your Python binary setup. Make sure you have Python 3.7 or greater installed, and make sure that the verison Python you want to use is mapped to your `python3` command. Otherwise you can open your terminal, run `which python` and then take the result of that command and paste it into the setting for the Python Command setting.
-
 ### Why is it called Amethyst?
 This extension is for the Python programming language so to stay on theme it was named after a kind of Pythonidae called the Amethystine Python which gets its name from the iridescent scales that appear to have a purple hue in certain lighting conditions!
+
+### I'm having trouble getting Amethyst to start
+This is most likely do to your Python binary setup. Make sure you have Python 3.7 or greater installed, and make sure that the verison Python you want to use is mapped to your `python3` command. Otherwise you can open your terminal, run `which python` and then take the result of that command and paste it into the setting for the Python Command setting.
 
 ### How do I learn Python Static Typing?
 I recommend getting into static typing once you have established at least some familiarity with the core language of Python and how computer programs work in general. I say that because most online resources for Python are written *without* static typing. When you're ready, [here is a great resource for getting started](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html).
@@ -75,6 +76,9 @@ Amethyst was neither tested nor designed for use with scripts that are meant to 
 I wanted to release this with HTTP request caching built-in at launch, but unfortunately ran out of time. Caching for external requests and API calls is a high priority for this project, so if you have any ideas or you want to help, please feel free to [join the discussion](https://github.com/rmdashrfv/amethyst-python/issues/1).
 
 ## Known issues
+
+### Life feedback for static typing is very slow
+Working on this and should have a fix soon. Because MyPy involves that extra step at every keystroke and due to the nature of type checking I am considering altering Amethyst so that static type checking only runs on save, while the general Python feedback still happens in real time as you type.
 
 ### Errors messages can stack on a single line
 When dealing with multiple simultaneous errors, it is possible for them to stack up on a single line. The goal is to get any given errant line of code to show only the topmost error and to reveal errors underneath only when that one is resolved. This issue seems to be tolerable so long as you can eventually solve your issue.
